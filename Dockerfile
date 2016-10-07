@@ -41,7 +41,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh
 
 # Ports 
-EXPOSE 80 443
+EXPOSE 80 443 3306
 
 # Boot up Nginx, and PHP5-FPM when container is started
 CMD ["docker-entrypoint.sh"]
