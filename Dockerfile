@@ -12,7 +12,7 @@ apt-get install --assume-yes \
   dialog \
   curl \
   libcurl3-dev \
-  php5-gd \
+#  php5-gd \
   php5-mysql \
   bzip2 \
   wget \
