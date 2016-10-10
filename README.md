@@ -8,4 +8,4 @@ $ docker-compose up -d
 
 Stop & delete Container :
 
-$ docker-compose stop && docker-compose rm
+$ docker-compose stop && docker-compose rm -f
