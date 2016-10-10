@@ -8,24 +8,17 @@ RUN DEBIAN_FRONTEND=noninteractive ;\
 apt-get update && \
 apt-get install --assume-yes \
   vim \
-  locales \
-  dialog \
   curl \
   libcurl3-dev \
   php5-mysql \
   bzip2 \
-  wget \
-  supervisor && \
+  wget && \
   rm -rf /var/lib/apt/lists/* 
   
-RUN locale-gen fr_FR fr_FR.UTF-8 && \ 
-dpkg-reconfigure -f noninteractive locales
-
 # Change upload-limits and -sizes
 RUN sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 2048M/g" /etc/php5/fpm/php.ini && \
 sed -i "s/post_max_size = 8M/post_max_size = 2048M/g" /etc/php5/fpm/php.ini && \
 echo 'default_charset = "UTF-8"' >> /etc/php5/fpm/php.ini && \
-echo "Europe/Paris" > /etc/timezone && dpkg-reconfigure tzdata && sed -i 's/.debian./.fr./g' /etc/ntp.conf
 
 COPY ./default /etc/nginx/sites-available/
 
