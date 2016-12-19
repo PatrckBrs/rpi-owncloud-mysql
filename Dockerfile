@@ -23,7 +23,7 @@ echo 'default_charset = "UTF-8"' >> /etc/php5/fpm/php.ini
 COPY ./default /etc/nginx/sites-available/
 
 # New version 9.1.1
-RUN cd /var/www && wget https://download.owncloud.org/community/owncloud-9.1.1.tar.bz2 && tar jxvf owncloud-9.1.1.tar.bz2 && rm owncloud-9.1.1.tar.bz2 
+RUN cd /var/www && wget https://download.owncloud.org/community/owncloud-9.1.2.tar.bz2 && tar jxvf owncloud-9.1.2.tar.bz2 && rm owncloud-9.1.2.tar.bz2 
 RUN chown -R www-data:www-data /var/www/owncloud
 
 # Set the current working directory
