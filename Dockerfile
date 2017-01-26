@@ -1,7 +1,7 @@
 # Dockerfile to Owncloud
 FROM patrckbrs/nginx-php5-fpm-resin
 
-MAINTAINER Patrick Brunias <patrick@brunias.org> 
+LABEL maintainer "Patrick Brunias <patrick@brunias.org>"
 
 # Update sources && install packages
 RUN DEBIAN_FRONTEND=noninteractive ;\
